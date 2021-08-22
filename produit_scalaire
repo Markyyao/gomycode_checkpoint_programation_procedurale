@@ -1,0 +1,35 @@
+ALGORITHME produit_scalaire
+
+VAR 
+   n: integer
+
+   FUNCTION dot_product (vect_A,vect_B)
+       VAR
+          i,j,ps := 0 :integer
+    BEGIN FUNCTION
+        FOR i FROM 1 TO n STEP DO
+           FOR j FROM 1 TO n STEP DO
+               ps := ps + A[i]*B[j]
+           END FOR
+        END FOR
+        RETURN ps
+   END FUNCTION
+BEGIN
+
+   WRITE (Entrer la taille du vecteur);
+   READ (n)
+   FOR i FROM 1 TO n STEP DO
+       WRITE (entrer l'element du vecteur V1);
+       READ (V1[i]);
+    END FOR
+    FOR j FROM 1 TO n STEP DO
+       WRITE (entrer l'element du vecteur V2);
+       READ (V2[j]);
+    END FOR
+
+    IF (dot_product(V1,V2) = 0) THEN
+      WRITE ("les vecteurs V1 et V2 sont orthogonaux")
+    ELSE
+      WRITE ("les vecteurs V1 et V2 ne sont pas orthogonaux")
+    END IF
+END
